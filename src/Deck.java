@@ -21,7 +21,7 @@ public class Deck {
 
     public void shuffle() {
         Collections.shuffle(baraja);
-        System.out.println("Se mezcló el Deck.");
+        System.out.println("\nSe mezcló el Deck.");
     }
 
     public void head() {
@@ -46,20 +46,20 @@ public class Deck {
     }
 
     public void imprimirBaraja() {
-        System.out.println("Imprimiendo baraja...");
+        System.out.println("\nImprimiendo baraja...");
         for (Carta carta : baraja) {
             System.out.println("palo: " + carta.palo + ", valor: " + carta.valor);
         }
     }
 
-    public int tamaño() {
+    public int size() {
         return baraja.size();
     }
 
     public static void main(String[] args) {
         Deck deck = new Deck();
 
-        System.out.println("Tamaño de la baraja: " + deck.tamaño());
+        System.out.println("Tamaño de la baraja: " + deck.size());
         deck.imprimirBaraja();
 
         deck.shuffle();
@@ -73,10 +73,10 @@ public class Deck {
 
         List<Carta> mano = deck.hand(5);
         System.out.println("\nMano de 5 cartas:");
-        for (Carta c : mano) {
-            System.out.println("palo: " + c.palo + ", valor: " + c.valor);
+        for (Carta cartaMano : mano) {
+            System.out.println("palo: " + cartaMano.palo + ", valor: " + cartaMano.valor);
         }
 
-        System.out.println("Tamaño final de la baraja: " + deck.tamaño());
+        System.out.println("Tamaño final de la baraja: " + deck.size());
     }
 }
